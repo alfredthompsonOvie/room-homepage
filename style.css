@@ -1,0 +1,49 @@
+:root {
+  box-sizing: border-box;
+  --DarkGray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --VeryDarkGray: hsl(0, 0%, 27%);
+
+
+  --ff: "Spartan";
+  --fs: 12px;
+  --fw-nm: 500;
+  --fw-md: 600;
+  --fw-bold: 700;
+}
+*,*::before,*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+body {
+
+}
+
+#app {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+button {
+  font-family: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+
+}
