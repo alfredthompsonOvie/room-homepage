@@ -4,8 +4,6 @@
   --Black: hsl(0, 0%, 0%);
   --White: hsl(0, 0%, 100%);
   --VeryDarkGray: hsl(0, 0%, 27%);
-
-
   --ff: "Spartan";
   --fs: 12px;
   --fw-nm: 500;
@@ -26,24 +24,229 @@ ul {
 a{
   text-decoration: none;
 }
-
-body {
-
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
 }
 
 #app {
   max-width: 1440px;
   margin: 0 auto;
 }
+header {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 23em auto;
 
+}
+.nav__bar {
+  grid-column: 1/-1;
+  grid-row: 1;
+  z-index: 9;
+  padding: 3em 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  align-items: center;
+  height: 7em;
+}
 
-button {
-  font-family: inherit;
-  background-color: transparent;
-  cursor: pointer;
+.nav__bar__contents {
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1em;
+}
+.hamburger {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  justify-self: start;
+}
+.openMenuBtn, .closeMenuBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.branding {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.nav__list {
+  display: flex;
+  justify-self: end;
+  margin-left: auto;
+  gap: 2em;
+}
+.is--active {
+  background-color: #fff;
+}
+.hide, .is--hidden {
+  display: none;
+}
+.slide.is--hidden {
+  display: none;
+  /* opacity: 0; */
+}
+
+.slideShow {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+
+}
+.slide {
+  /* background-color: blue; */
+  /* display: grid; */
+
+}
+.showcase {
+  object-fit: cover;
+  object-position: center;
+  /* height: 100%; */
+  height: 23em;
+  width: 100%;
+}
+.slide__content {
+  padding: 1em;
+}
+.title {
+  font-size: 2rem;
+  margin-bottom: .2em;
+}
+.slide__content p {
+  max-width: 427px;
+}
+.cta {
+  /* background-color: ; */
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  /* color: var(--DarkGray); */
+  color: var(--VeryDarkGray);
+  margin-top: 1em;
+}
+
+.controls {
+  grid-column: 2/-1;
+  grid-row: 1;
+  justify-self: end;
+  align-self: end;
+  display: flex;
+}
+
+.btn--prev, .btn--next {
+  padding: 1em 1.6em;
+  transition: all .3s linear;
+  background-color: var(--Black);
+
+}
+.btn--prev:hover, .btn--next:hover {
+  background-color: var(--VeryDarkGray);
+}
+.controls img {
+  width: .7em;
 }
 
 
+@media (min-width: 600px) {
+  header {
+    grid-template-rows: 25em auto;
+  
+  }
+  .showcase {
+    /* object-fit: cover; */
+    /* object-position: center; */
+    /* object-fit: contain; */
+    height: 25em;
+  }
+}
 @media (min-width: 768px) {
 
+}
+@media (min-width: 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 65vh 35vh;
+  }
+  header {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: .5fr 6fr 5fr .5fr;
+    grid-template-columns: 1fr 6fr 4fr 1fr;
+    grid-template-columns: .5fr 7fr 4fr .5fr;
+
+    grid-template-rows: auto;
+  }
+  .nav__bar {
+    grid-column: 2;
+    grid-template-columns: 1fr;
+  }
+  .nav__bar__contents {
+    grid-column: 1;
+  }
+  .hide {
+    display: block;
+  }
+  .hamburger{
+    display: none;
+  }
+  .branding{
+    margin-inline: 0;
+  }
+  .nav__list {
+    position: static;
+    display: flex;
+    gap: 1em;
+    margin-left: 0;
+  }
+  .slide {
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr 6fr 4fr 1fr;
+    /* grid-template-columns: .5fr 6fr 5fr .5fr; */
+    grid-template-columns: .5fr 7fr 4fr .5fr;
+
+
+    grid-template-rows: auto;
+    height: 100%;
+    
+  }
+  picture {
+    grid-column: 1 / 3;
+    background-color: red;
+  }
+  .showcase{
+    height: 100%;
+    /* object-fit: cover; */
+  }
+  .slide__content {
+    grid-column: 3;
+  }
+  .controls {
+    grid-column: 3;
+    justify-self: start;
+  }
+
+
+  .about {
+    grid-row: 2;
+    grid-column: 1/-1;
+    background-color: greenyellow;
+    display: grid;
+    grid-template-columns: 3fr 4fr 3fr;
+  }
+  .about img {
+    height: 100%;
+  }
+
+  .about__content {
+    grid-column: 2;
+    padding: 1em;
+  }
 }
